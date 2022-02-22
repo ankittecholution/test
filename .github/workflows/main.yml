@@ -32,5 +32,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Set env
         run: echo "GITHUB_SHA_SHORT=$(echo $OUTPUT | pwd > data.txt)" >> $GITHUB_ENV
+      - name: GET env
+        run: echo "GITHUB_SHA_SHORT2=$(echo $OUTPUT2 | cat data.txt)" >> $GITHUB_ENV
       - name: Test
-        run: echo $GITHUB_SHA_SHORT
+        run: echo $GITHUB_SHA_SHORT2
